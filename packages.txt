@@ -1,1 +1,1 @@
-imageio-ffmpeg
+conda-forge::imageio-ffmpeg
