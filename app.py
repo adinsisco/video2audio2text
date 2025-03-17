@@ -5,6 +5,9 @@ import openai
 from dotenv import load_dotenv
 import os
 
+import moviepy
+st.write(f"Zainstalowana wersja moviepy: {moviepy.__version__}")
+
 # Ładowanie zmiennych środowiskowych z pliku .env
 load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
