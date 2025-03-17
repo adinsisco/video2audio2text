@@ -5,17 +5,23 @@ import openai
 from dotenv import load_dotenv
 import os
 
+#st.write("pobódka")
+
 # Ładowanie zmiennych środowiskowych z pliku .env
 load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
 
-st.set_page_config(page_title="Video to Audio Converter, Transcriber, and Summarizer!")
+st.set_page_config(page_title="Video to Audio Converter, Transcriber, and Summarizer!!!")
 
-if not api_key:
+# Ustawianie stanu sesji dla klucza API
+if 'api_key' not in st.session_state:
+    st.session_state.api_key = api_key
+
+if not st.session_state.api_key:
     st.warning("Nie znaleziono pliku .env lub brak klucza API w pliku. Proszę wprowadzić klucz API poniżej.")
-    api_key = st.text_input("OpenAI API Key", type="password")
+    st.session_state.api_key = st.text_input("OpenAI API Key", type="password")
 
-openai.api_key = api_key
+openai.api_key = st.session_state.api_key
 
 def video_to_audio(video_file):
     video = VideoFileClip(video_file)
@@ -29,7 +35,7 @@ def transcribe_audio_with_openai(audio_path):
 
     api_url = "https://api.openai.com/v1/audio/transcriptions"
     headers = {
-        "Authorization": f"Bearer {api_key}",
+        "Authorization": f"Bearer {st.session_state.api_key}",
     }
     files = {
         'file': (audio_path, open(audio_path, 'rb')),
