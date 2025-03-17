@@ -6,6 +6,6 @@ import streamlit as st
 #import os
 
 #import moviepy
-#st.write(f"Zainstalowana wersja moviepy: {moviepy.__version__}")
+st.write(f"Zainstalowana wersja moviepy: {st.__version__}")
 #st.write(f"Zainstalowana wersja moviepy: {moviepy.__version__}")
 
