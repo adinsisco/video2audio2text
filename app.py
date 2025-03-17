@@ -5,7 +5,7 @@ import streamlit as st
 # from dotenv import load_dotenv
 #import os
 
-#import moviepy
-st.write(f"Zainstalowana wersja moviepy: {st.__version__}")
-#st.write(f"Zainstalowana wersja moviepy: {moviepy.__version__}")
+import moviepy
+st.write(f"Zainstalowana wersja streamlit: {st.__version__}")
+st.write(f"Zainstalowana wersja moviepy: {moviepy.__version__}")
 
