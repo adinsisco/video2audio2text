@@ -1,0 +1,6 @@
+streamlit
+moviepy.editor
+requests
+openai==0.28
+python-dotenv
+os
