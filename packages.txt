@@ -1,1 +1,2 @@
 ffmpeg
+imageio==2.4.1
